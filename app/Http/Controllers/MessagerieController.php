@@ -26,8 +26,10 @@ class MessagerieController extends Controller
         }
     }
     public function messageListjson(){
-        $messagesBdd = DB::table('chat_models')
-        ->join('users','chat_models.message','message')->orderBy('chat_models.id','desc')->get();
+        $messagesBdd = DB::table('users')
+        ->join('chat_models','users.id','=', 'chat_models.user_id')
+        ->select('users.*','chat_models.message')
+        ->get();
         return response()->json($messagesBdd);
     }
 }   

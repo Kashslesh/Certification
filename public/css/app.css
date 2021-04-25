@@ -1,9 +1,5 @@
-body,
-h1,
-h2,
-h3,
-h4,
-p
+body
+
 {
     margin: 0;
     background-color: #191919;
@@ -127,12 +123,13 @@ li {
     width: 6em;
 }
 .textDeMessage {
-    width: 350px;
-    min-height: 380px;
-    height: auto;
-    background-color: #e6e6e6;
+    width: 371px;
+    height: 380px;
+    background-color: #03e9f4;
     border: 3px solid white;
     border-radius: 20px;
+    overflow: hidden;
+    /* overflow-y: auto; */
 }
 .blockMessage form {
     display: flex;
@@ -142,13 +139,13 @@ li {
 .chat{
     width: 200px;
     height: 50px;
-    border-radius: 10px;
     position: relative;
     left: 19.5%;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 10px;
     border: none;
+    font-weight: bold;
 }
 .btn-message{
     border: none;
@@ -163,6 +160,7 @@ li {
     box-sizing: border-box;
     position: relative;
     background-color: #03e9f4;
+    font-weight: bold;
 }
 .btn-1{
     left: 31.5%;
@@ -189,9 +187,142 @@ li {
     align-self: flex-end;
 }
 .textDeMessage li {
-    background-color: rgb(175, 33, 231) !important;
+    width: 305px;
+    border-radius: 56px;
+    background-color: #f2cd8e;
+    margin: 0px;
+    padding: 0px;
+    min-height: 55px;
+    height: auto;
+}
+.textDeMessage p, h4,h6 {
+    margin: 0;
+    padding: 0;
     color: black;
+    margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.textDeMessage p {
-    background-color: transparent;
+/* style pour haburger */
+#menu__toggle {
+    opacity: 0;
+  }
+  .menu__btn {
+    display: none; 
+    align-items: center; 
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  /* добавляем "гамбургер" */
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #3498db;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  /* container menu */
+.menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #e0f0fa;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    z-index: 1;
+  }
+  /* des elements de menu */
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .menu__item:hover {
+    background-color: #CFD8DC;
+  }
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+  }
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: .25s;
 }
+.menu__box {
+  transition-duration: .25s;
+}
+.menu__item {
+  transition-duration: .25s;
+}
+
+@media (max-width: 767px) {
+    .menu__btn {
+        display: flex;
+    }
+    .inner{
+        display: none;
+    }
+    .container{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 24em;
+    }
+    .blockMessage {
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .textDeMessage {
+        width: 302px;
+    }
+    .textDeMessage li {
+        width: 220px;
+    }
+    .chat {
+        left: 15.5%;
+    }
+    .box {
+        margin-left: auto;
+        margin-right: auto;
+        width: 375px;
+        padding: 0;
+    }
+  }

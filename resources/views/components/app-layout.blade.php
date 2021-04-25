@@ -18,6 +18,17 @@
             <a class="neo-btn" href="/signup">Créer un compte</a>
         </nav>
     </div>
+    <div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+    <span></span>
+    </label>
+  <ul class="menu__box">
+    <li><a class="menu__item" href="/">Messagerie</a></li>
+    <li><a class="menu__item" href="/login">Se connecter</a></li>
+    <li><a class="menu__item" href="/signup">Créer un compte</a></li>
+  </ul>
+</div>
 </header>
 {{$slot}}
 <script src="/js/app.js"></script>

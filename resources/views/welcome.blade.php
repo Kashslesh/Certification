@@ -15,7 +15,7 @@
             </div>
             <form id="messagerie" method="POST">
                 @csrf
-                <input type="text" class="chat" name="messagerie" placeholder="commencez à écrire" required>
+                <input type="text" class="chat" name="messagerie" placeholder="Commencez à écrire" required>
                 <button class="btn-message btn-1" type="submit">Envoyer</button>
             </form>
         </div>
